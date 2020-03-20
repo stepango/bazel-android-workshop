@@ -1,0 +1,19 @@
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_android_library")
+
+kt_android_library(
+    name = "main",
+    srcs = glob(["*.kt"]),
+    deps = [
+        "//app/src/main:res",
+        "//app/src/main/java/com/example/myapplication/ui/dashboard",
+        "//app/src/main/java/com/example/myapplication/ui/home",
+        "//app/src/main/java/com/example/myapplication/ui/notifications",
+        "@maven//:androidx_appcompat_appcompat",
+        "@maven//:androidx_navigation_navigation_fragment",
+        "@maven//:androidx_navigation_navigation_ui",
+        "@maven//:androidx_navigation_navigation_fragment_ktx",
+        "@maven//:androidx_navigation_navigation_ui_ktx",
+        "@maven//:androidx_navigation_navigation_runtime_ktx",
+    ],
+    visibility = ["//app/src/main:__subpackages__"],
+)
